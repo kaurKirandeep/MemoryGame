@@ -1,0 +1,164 @@
+.flip-container {
+	perspective: 1000px;
+}
+
+.flip-container.flip .flipper{
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 100px;
+	height: 150px;
+}
+
+
+
+h1{
+	text-align: center;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+
+main{
+	margin: auto;
+	width: 600px;
+	padding: 20px;
+	border-radius: 30px;
+	border: 1px solid #ff0000;
+	text-align: center;
+}
+
+
+#container{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	row-gap: 20px;
+	column-gap: 20px;
+	padding: 10px;
+	margin: auto;
+    justify-content: center;
+}
+
+.mainContent
+{
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+
+.rAlign{
+	text-align: right;
+	margin: auto;
+	margin-right: 0px;
+}
+
+button{
+	height: 50px;
+	width: 150px;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ff0000;
+    box-shadow: 5px 5px 2px #888888;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	background-image: url("../image/cardTexture.png");
+	transform: rotateY(0deg);
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 25px;
+	width: 70%;
+	position: relative;
+    text-align: center;
+}
+  
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: rgb(43, 41, 41);
+}
+
+.popup .close:hover {
+	color: #7cb909;
+}
+
+.popup .content-1,
+.content-2 {
+	max-height: 30%;
+	overflow: auto;
+	text-align: center;
+}
+#highRecord{
+	visibility: hidden;
+}
+.show {
+	visibility: visible !important;
+	opacity: 100 !important;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.center {
+	margin: auto;
+  }
+  
+  th, td {
+	padding: 10px;
+  }
+  p{
+	margin: 0 auto;
+	vertical-align: middle;
+  }

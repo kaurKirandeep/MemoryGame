@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/MemoryGame.css">
+</head>
+
+<body onload="onLoad()">
+    <div class="wrapper">
+        <header>
+            <h1>Memory Game</h1>
+        </header>
+        <main>
+            <div class = "mainContent">
+                <div class="center">
+                    <button class="lAlign" id="btnStart" onclick="execute()">New Game</button>
+                </div>
+                <div id="controls" class="center">
+                    <div id="elapsedDiv" class="rAlign">
+                        <div class="rAlign">
+                            Pairs Matched : 
+                            <label id="matchPairs">0</label>
+                        </div><div class="rAlign">
+                            Elapsed Time : 
+                            <label id="minutes">00</label>:<label id="seconds">00</label>
+                        </div><br/>
+                        <div class="rAlign">
+                            Best Time : 
+                            <label id="bestTime">59:59</label>
+                        </div><br/>
+                    </div>
+                </div>
+                <div id="container">
+
+                </div>
+            </div>
+        </main>
+
+        <div id="popup_id" class="overlay">
+            <div class="popup">
+                <h2>Completed</h2>
+                <a class="close" href=# onclick="closePopup()">×</a>
+                <br><div class="content-1">
+                    Congratulations, You're a Winner!
+                </div><br/>
+                <div class="content-2">
+                    <p>You made <span id=finalMove> </span> moves in <span id=totalTime> </span> </p>
+                </div><br>
+                <div id="highRecord">
+                    <h3>* You broke the Record! New Record : <span id=newRecord> </span>*</h3>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/MemoryGame.js"></script>
+    </div>
+</body>
+
+</html>
